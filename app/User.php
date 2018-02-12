@@ -4,6 +4,7 @@ namespace App;
 
 use Illuminate\Notifications\Notifiable;
 use Illuminate\Foundation\Auth\User as Authenticatable;
+use Transfer;
 
 class User extends Authenticatable
 {
@@ -17,6 +18,11 @@ class User extends Authenticatable
     protected $fillable = [
         'name', 'email', 'password',
     ];
+
+    public function transfers()
+    {
+        return $this->hasMany('App\Transfer');
+    }
 
     /**
      * The attributes that should be hidden for arrays.

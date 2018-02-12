@@ -171,6 +171,113 @@ a:hover, a:focus {
     text-decoration: none;
 }
 
+
+
+.card:hover .filter {
+    opacity: 1;
+    filter: alpha(opacity=100);
+}
+
+.card .btn-hover {
+    opacity: 0;
+    filter: alpha(opacity=0);
+}
+
+.card:hover .btn-hover {
+    opacity: 1;
+    filter: alpha(opacity=100);
+}
+
+.card .card-body {
+    padding: 15px 15px 10px 15px;
+}
+
+.card .card-header {
+    padding: 15px 15px 0;
+    background-color: #FFFFFF;
+    border-bottom: none !important;
+}
+
+.card .card-category,
+.card label {
+    font-size: 14px;
+    font-weight: 400;
+    color: #9A9A9A;
+    margin-bottom: 0px;
+}
+
+.card .card-category i,
+.card label i {
+    font-size: 16px;
+}
+
+.card label {
+    font-size: 12px;
+    margin-bottom: 5px;
+    text-transform: uppercase;
+}
+
+.card .card-title {
+    margin: 0;
+    color: #333333;
+    font-weight: 300;
+}
+
+.card .avatar {
+    width: 30px;
+    height: 30px;
+    overflow: hidden;
+    border-radius: 50%;
+    margin-right: 5px;
+}
+
+.card .description {
+    font-size: 14px;
+    color: #333;
+}
+
+.card .card-footer {
+    padding-top: 0;
+    background-color: transparent;
+    line-height: 30px;
+    border-top: none !important;
+    font-size: 14px;
+}
+
+.card .card-footer .legend {
+    padding: 5px 0;
+}
+
+.card .card-footer hr {
+    margin-top: 5px;
+    margin-bottom: 5px;
+}
+
+.card .stats {
+    color: #a9a9a9;
+}
+
+.card .card-footer div {
+    display: inline-block;
+}
+
+.card .author {
+    font-size: 12px;
+    font-weight: 600;
+    text-transform: uppercase;
+}
+
+.card .author i {
+    font-size: 14px;
+}
+
+.card h6 {
+    font-size: 12px;
+    margin: 0;
+}
+
+
+
 a:focus, a:active,
 button::-moz-focus-inner,
 input::-moz-focus-inner,
@@ -2484,6 +2591,8 @@ fieldset[disabled] .btn-neutral.active {
     text-align: right;
     text-anchor: end;
 }
+
+
 
 .ct-label.ct-vertical.ct-end {
     -webkit-box-align: flex-end;

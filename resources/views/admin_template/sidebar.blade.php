@@ -10,7 +10,7 @@
   <div class="sidebar-wrapper">
         <div class="logo">
             <a href="/" class="simple-text">
-                Quotes Blog
+                Aplikasi Kas Keluarga
             </a>
         </div>
 
@@ -22,45 +22,21 @@
                 </a>
             </li>
             <li>
-                <a href="/profile">
-                    <i class="pe-7s-user"></i>
-                    <p>User Profile</p>
-                </a>
-            </li>
-            <li>
-                <a href="/quotes/create">
-                    <i class="pe-7s-note2"></i>
-                    <p>Buat Quotes</p>
-                </a>
-            </li>
-            <li>
-                <a href="/quotes">
+                <a href="/transfer">
                     <i class="pe-7s-news-paper"></i>
-                    <p>Lihat Quotes</p>
+                    <p>Transfer Uang</p>
                 </a>
             </li>
             <li>
-                <a href="">
-                    <i class="pe-7s-science"></i>
-                    <p>Icons</p>
+                <a href="/tarik">
+                    <i class="pe-7s-news-paper"></i>
+                    <p>Tarik Uang</p>
                 </a>
             </li>
             <li>
-                <a href="">
-                    <i class="pe-7s-map-marker"></i>
-                    <p>Maps</p>
-                </a>
-            </li>
-            <li>
-                <a href="">
-                    <i class="pe-7s-bell"></i>
-                    <p>Notifications</p>
-                </a>
-            </li>
-    <li class="active-pro">
-                <a href="">
-                    <i class="pe-7s-rocket"></i>
-                    <p>Upgrade to PRO</p>
+                <a href="/laporan">
+                    <i class="pe-7s-note2"></i>
+                    <p>Laporan Keuangan</p>
                 </a>
             </li>
         </ul>
