@@ -32,28 +32,12 @@
                                                 </div>
                                             </div>
                                         </div>
-                                        <div class="row">
-                                            <div class="col-md-12">
-                                                <div class="form-group">
-                                                    <label>Tujuan</label>
-                                                    <fieldset name="tujuan" class="form-group" style="margin-left : 20px;">
-                                                    <div class="form-check">
-                                                      <label class="form-check-label">
-                                                        <input type="radio" id="off" class="form-check-input" name="optionKeluarga" value="option1" checked>
-                                                        Keperluan Keluarga
-                                                      </label>
-                                                    </div>
-                                                    <div class="form-check">
-                                                    <label class="form-check-label">
-                                                        <input type="radio" id="on" class="form-check-input" name="optionPinjam" value="option2">
-                                                        Keperluan Dipinjamkan
-                                                      </label>
-                                                    </div>
+                                                  <input type="radio" id="off"  name="optionPinjam"> Keperluan Dipinjamkan<br>
 
-                                                  </fieldset>
-                                                </div>
-                                            </div>
-                                        </div>
+                                                  <div class="form-group">
+
+                                                    <input id="on" type="radio" d="on"  name="optionPinjam" value="female"> Belum Terverifikasi<br>
+                                                  </div>
 
                                         <div class="row" id="kepada" style="display:none">
                                             <div class="col-md-12">

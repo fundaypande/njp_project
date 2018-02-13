@@ -29,6 +29,19 @@ class TransferController extends Controller
                 'user_id' => Auth::user()->id
         ]);
         return redirect('/transfer')->with('msg', 'Berhasil memasukkan data transfer harap lakukan konfirmasi ke super admin');
+    }
 
+    // update status transfer dengan ajax
+    public function updateStatus(Request $request, $id){
+      $post = Transfer::find($id)->update($request->all());
+      return response()->json($post);
+    }
+
+    public function showTable(){
+      $transfersUnaprove = Transfer::where('status', '0')
+            -> get();
+      $transfersAprove = Transfer::where('status', '1')
+            -> paginate(10);
+      return view('super_admin.kelola_transfer', compact('transfersUnaprove', 'transfersAprove'));
     }
 }
