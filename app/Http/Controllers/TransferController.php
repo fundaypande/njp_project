@@ -32,9 +32,37 @@ class TransferController extends Controller
     }
 
     // update status transfer dengan ajax
-    public function updateStatus(Request $request, $id){
-      $post = Transfer::find($id)->update($request->all());
-      return response()->json($post);
+    public function updateStatus(Request $request, $id, $stat){
+      $transfer = Transfer::findOrFail($id);
+      $status = 1;
+      if($stat == "aprove")
+          $status = 0;
+          $transfer -> update([
+            'status' => $status
+          ]);
+
+          return redirect('kelola/transfer')->with('msg', 'Data Berhasil Diedit');
+    }
+
+    //update seluruh data transfer_uang
+    public function update(Request $request, $id){
+      $transfer = Transfer::findOrFail($id);
+
+      $nominal = $request -> nominal;
+      $nominal = str_replace('.','',$nominal);
+      $this -> validate($request, [
+              'nominal' => 'required|min:3|max:12',
+              'bank' => 'required',
+              'keterangan' => 'required|min:3'
+            ]);
+      $transfer -> update([
+        'nominal' => $nominal,
+        'bank' => $request -> bank,
+        'keterangan' => $request -> keterangan
+      ]);
+
+      return redirect('kelola/transfer')->with('msg', 'Data Berhasil Diedit');
+
     }
 
     public function showTable(){
@@ -42,6 +70,14 @@ class TransferController extends Controller
             -> get();
       $transfersAprove = Transfer::where('status', '1')
             -> paginate(10);
-      return view('super_admin.kelola_transfer', compact('transfersUnaprove', 'transfersAprove'));
+      return view('super_admin.transfer.kelola_transfer', compact('transfersUnaprove', 'transfersAprove'));
     }
+
+    public function destroy($id){
+      $comment = Transfer::findOrFail($id);
+          $comment -> delete();
+        return redirect('kelola/transfer')->with('msg', 'Data transfer berhasil di hapus');
+    }
+
+
 }

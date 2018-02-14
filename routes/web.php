@@ -13,18 +13,20 @@ Route::group(['middleware' => ['auth', 'role']], function(){
   Route::get('/super', function(){
     return view('super_admin.admin');
   });
-  Route::get('/kelola/transfer', 'TransferController@showTable');
+
+  //kelola transfer
+  Route::get('kelola/transfer', 'TransferController@showTable');
+  Route::put('kelola/transfer/{id}/{stat}', 'TransferController@updateStatus');
+  Route::post('transfer/store', 'TransferController@store');
+  Route::put('kelola/transfer/{id}', 'TransferController@update');
+  Route::delete('kelola/transfer/{id}', 'TransferController@destroy');
 
   Route::get('/tarik', function(){
     return view('sidebar.tarik_uang');
   });
 
-  Route::get('/ulur', function(){
-    return view('sidebar.post2');
-  });
 
 
-  Route::post('transfer/store', 'TransferController@store');
 
   Route::get('post', 'PostController@myPosts');
 
