@@ -15,8 +15,14 @@
         </div>
 
         <ul class="nav">
-            <li class="active">
-                <a href="/dashboard">
+          <li class="active">
+              <a href="/super">
+                  <i class="pe-7s-graph"></i>
+                  <p>Admin Panel</p>
+              </a>
+          </li>
+            <li>
+                <a href="/home">
                     <i class="pe-7s-graph"></i>
                     <p>Dashboard</p>
                 </a>

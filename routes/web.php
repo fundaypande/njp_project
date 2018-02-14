@@ -21,9 +21,13 @@ Route::group(['middleware' => ['auth', 'role']], function(){
   Route::put('kelola/transfer/{id}', 'TransferController@update');
   Route::delete('kelola/transfer/{id}', 'TransferController@destroy');
 
-  Route::get('/tarik', function(){
-    return view('sidebar.tarik_uang');
-  });
+  //kelola Tarik
+  Route::post('tarik/store', 'TarikController@store');
+  Route::get('tarik', 'TarikController@showCreate');
+  Route::get('kelola/tarik', 'TarikController@show');
+  Route::put('kelola/tarik/{id}', 'TarikController@update');
+  Route::delete('kelola/tarik/{id}', 'TarikController@destroy');
+
 
 
 

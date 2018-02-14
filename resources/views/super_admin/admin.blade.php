@@ -19,7 +19,7 @@
                           </p>
                       </div>
                           <div class="card-body" style="padding : 10px 20px 10px 20px">
-                            <h1>Halaman Super Admin</h1>
+                            <h1>Users</h1>
                         </div>
                     </div>
                 </div>
@@ -33,12 +33,13 @@
                           </p>
                       </div>
                           <div class="card-body" style="padding : 10px 20px 10px 20px">
-                            <h1>Halaman Super Admin</h1>
+                            <h1>Transfer</h1>
                         </div>
                     </div>
                   </a>
                 </div>
                 <div class="col-md-3">
+                  <a href="/kelola/tarik">
                   <div class="card">
                       <div class="card-header" style="padding : 10px 20px 10px 20px">
                           <h4 class="card-title">Tarik Uang</h4>
@@ -47,9 +48,10 @@
                           </p>
                       </div>
                           <div class="card-body" style="padding : 10px 20px 10px 20px">
-                            <h1>Halaman Super Admin</h1>
+                            <h1>Tarik</h1>
                         </div>
                     </div>
+                    </a>
                 </div>
 
                 <div class="col-md-3">
@@ -61,7 +63,7 @@
                           </p>
                       </div>
                           <div class="card-body" style="padding : 10px 20px 10px 20px">
-                            <h1>Halaman Super Admin</h1>
+                            <h1>Laporan</h1>
                         </div>
                     </div>
                 </div>
