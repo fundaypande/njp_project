@@ -50,6 +50,38 @@
     }
 }
 
+/* funday */
+.legend1{
+  color : #d70206;
+}
+.legend2{
+  color : #f05b4f;
+}
+.legend3{
+  color : #f4c63d;
+}
+.legend4{
+  color : #d17905;
+}
+.legend5{
+  color : #453d3f;
+}
+.legend6{
+  color : #59922b;
+}
+.legend7{
+  color : #f05b4f;
+}
+.legend8{
+  color : #f05b4f;
+}
+
+.rank {
+  list-style-type: none;
+  padding : 5px 0px 5px 0px;
+}
+
+
 /*           Font Smoothing      */
 body,
 h1, .h1,
@@ -2539,7 +2571,7 @@ fieldset[disabled] .btn-neutral.active {
 .ct-label {
     fill: rgba(0, 0, 0, 0.4);
     color: rgba(0, 0, 0, 0.4);
-    font-size: 1.3rem;
+    font-size: 1.2rem !important;
     line-height: 1;
 }
 

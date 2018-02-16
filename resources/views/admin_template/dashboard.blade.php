@@ -68,8 +68,8 @@
 
 										<ul class="nav navbar-nav navbar-right">
 												<li>
-													 <a href="/quotes/create">
-															 <p>Buat Quote</p>
+													 <a href="/transfer">
+															 <p>Transfer</p>
 														</a>
 												</li>
 												<li class="dropdown">
@@ -85,10 +85,10 @@
 																	<a href="/profile">Profile</a>
 																</li>
 																	<li>
-																		<a href="/quotes">Beranda Kutipan</a>
+																		<a href="/home">Beranda</a>
 																	</li>
 																	<li>
-																		<a href="/quotes/create">Buat Quotes</a>
+																		<a href="profile/pass">Ubah Password</a>
 																	</li>
 																<li class="divider"></li>
 																<li>

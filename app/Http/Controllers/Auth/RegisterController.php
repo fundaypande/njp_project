@@ -52,6 +52,7 @@ class RegisterController extends Controller
             'name' => 'required|string|max:255',
             'email' => 'required|string|max:255|unique:users',
             'password' => 'required|string|min:6|confirmed',
+            'realemail' => 'required|string|min:6|email',
         ]);
     }
 
@@ -63,14 +64,16 @@ class RegisterController extends Controller
      */
     protected function create(array $data)
     {
-        $token = Token::findOrFail('1') -> get();
+        $token = Token::findOrFail('1');
 
-        if( $data['token'] == '23eGdy6' ){
+        if( $data['token'] == $token -> token ){
           return User::create([
                 'name' => $data['name'],
                 'email' => $data['email'],
                 'password' => bcrypt($data['password']),
                 'role' => '1',
+                'realemail' => $data['realemail'],
+                'gambar' => 'image.png',
             ]);
         } else abort('400');
     }

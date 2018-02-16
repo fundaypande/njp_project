@@ -2,10 +2,10 @@
     <div class="modal-dialog" role="document">
         <div class="modal-content">
             <div class="modal-header">
-                <h4 class="modal-title" id="titleModal">Hapus Transfer</h4>
+                <h4 class="modal-title" id="titleModal">Hapus User</h4>
             </div>
             <div class="modal-body">
-              <p id="editP">Apakah anda yakin ingin menghapus data tarik?</p>
+              <p id="editP">Apakah anda yakin ingin menghapus data user</p>
               <form action="" method="POST">
                 {{ csrf_field() }}
                 <input type="hidden" name="_method" value="DELETE">

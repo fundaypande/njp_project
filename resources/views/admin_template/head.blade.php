@@ -21,6 +21,9 @@
   <!--  CSS for Demo Purpose, don't include it in your project     -->
   <link href="{!! asset('css/demo.css') !!}" rel="stylesheet" />
 
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/chartist.js/latest/chartist.min.css">
+  <script src="https://cdn.jsdelivr.net/chartist.js/latest/chartist.min.js"></script>
+
 
   <!--     Fonts and icons     -->
   <link href="http://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">

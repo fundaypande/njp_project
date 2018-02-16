@@ -66,11 +66,25 @@
                             </div>
                         </div>
 
+
+                        <div class="form-group{{ $errors->has('realemail') ? ' has-error' : '' }}">
+                            <label for="realemail" class="col-md-4 control-label">Email</label>
+
+                            <div class="col-md-6">
+                                <input id="realemail" type="text" class="form-control" name="realemail" required>
+                                @if ($errors->has('realemail'))
+                                    <span class="help-block">
+                                        <strong>{{ $errors->first('realemail') }}</strong>
+                                    </span>
+                                @endif
+                            </div>
+                        </div>
+
                         <div class="form-group{{ $errors->has('token') ? ' has-error' : '' }}">
                             <label for="token" class="col-md-4 control-label">Token</label>
 
                             <div class="col-md-6">
-                                <input id="token" type="token" class="form-control" name="token" required>
+                                <input id="token" type="password" class="form-control" name="token" required>
 
                                 @if ($errors->has('token'))
                                     <span class="help-block">

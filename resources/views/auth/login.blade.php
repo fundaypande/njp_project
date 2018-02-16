@@ -8,6 +8,15 @@
                 <div class="panel-heading">Login</div>
 
                 <div class="panel-body">
+                  @if(session('msg'))
+                  <div class="alert alert-info alert-with-icon" data-notify="container">
+                        <button type="button" aria-hidden="true" class="close" data-dismiss="alert">
+                            <i class="nc-icon nc-simple-remove"></i>
+                        </button>
+                        <span data-notify="icon" class="nc-icon nc-bell-55"></span>
+                        <span data-notify="message">{{ session('msg') }}</span>
+                    </div>
+                  @endif
                     <form class="form-horizontal" method="POST" action="{{ route('login') }}">
                         {{ csrf_field() }}
 

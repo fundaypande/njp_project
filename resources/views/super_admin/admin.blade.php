@@ -11,6 +11,7 @@
               <!-- do what you want to do -->
               <div class="row">
                 <div class="col-md-3">
+                  <a href="/kelola/user">
                   <div class="card">
                       <div class="card-header" style="padding : 10px 20px 10px 20px">
                           <h4 class="card-title">Data User</h4>
@@ -22,6 +23,7 @@
                             <h1>Users</h1>
                         </div>
                     </div>
+                    </a>
                 </div>
                 <div class="col-md-3">
                   <a href="/kelola/transfer">
