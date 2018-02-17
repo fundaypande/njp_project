@@ -77,7 +77,7 @@
 }
 
 .rank {
-  list-style-type: none;
+  font-size: 18px;
   padding : 5px 0px 5px 0px;
 }
 
@@ -2569,7 +2569,7 @@ fieldset[disabled] .btn-neutral.active {
 }
 
 .ct-label {
-    fill: rgba(0, 0, 0, 0.4);
+    fill: #ffffff !important;
     color: rgba(0, 0, 0, 0.4);
     font-size: 1.2rem !important;
     line-height: 1;

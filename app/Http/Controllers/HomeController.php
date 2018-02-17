@@ -24,6 +24,7 @@ class HomeController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
+
     public function index()
     {
         $totals = Total::findOrFail('1');
@@ -46,6 +47,7 @@ class HomeController extends Controller
                        -> where('status','=', '1')
                        -> groupBy('user_id')
                        -> orderBy('sum', 'desc')
+                       
                        -> get();
         //dd($rank);
 

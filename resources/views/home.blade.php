@@ -6,7 +6,12 @@
               <!-- do what you want to do -->
               <div class="row">
                 <div class="col-md-12">
-                  <a href="/kelola/user">
+                  @if(session('msg'))
+                    <div class="alert alert-danger">
+                      {{ session('msg') }}
+                    </div>
+                  @endif
+                  <a href="#">
                   <div class="card">
                       <div class="card-header" style="padding : 10px 20px 10px 20px">
                           <h4 class="card-title">Total Dana Terhimpun (Sampai Saat Ini)</h4>
@@ -151,11 +156,11 @@
                           </p>
                       </div>
                           <div class="card-body" style="padding : 10px 20px 10px 20px">
-                            <ul>
+                            <ol>
                               @foreach($rank as $key => $ranks)
                                   <a href="profile/{{$ranks -> user_id}}"><li class="rank">{{$ranks -> user -> name}}</li>
                               @endforeach
-                            </ul>
+                            </ol>
                         </div>
                     </div>
                 </div>

@@ -15,7 +15,7 @@
         </div>
 
         <ul class="nav">
-          <li class="active">
+          <li>
               <a href="/super">
                   <i class="pe-7s-graph"></i>
                   <p>Admin Panel</p>
@@ -39,12 +39,31 @@
                     <p>Tarik Uang</p>
                 </a>
             </li>
-            <li>
-                <a href="/laporan">
-                    <i class="pe-7s-note2"></i>
-                    <p>Laporan Keuangan</p>
-                </a>
-            </li>
+
         </ul>
   </div>
 </div>
+<script type="text/javascript">
+  var currentURL = $(location).attr("href"); //get all url
+  var base_url = window.location.origin; //get base url ('http://localhost.com')
+
+  currentURL = currentURL.replace(base_url, '');
+
+  switch(currentURL) {
+    case '/super':
+        $("li").find('a[href="/super"]').parent().addClass('active');
+        break;
+    case '/home':
+        $("li").find('a[href="/home"]').parent().addClass('active');
+        break;
+    case '/transfer':
+        $("li").find('a[href="/transfer"]').parent().addClass('active');
+        break;
+    case '/tarik':
+        $("li").find('a[href="/tarik"]').parent().addClass('active');
+        break;
+    default:
+        $("li").find('a[href="/super"]').parent().addClass('active');
+  }
+
+</script>

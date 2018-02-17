@@ -63,16 +63,18 @@
                               if( ($user->role)  == '0')
                                 $role = 'admin';
                              ?>
-                            <tr >
-                              <td>{{++$key}}</td>
-                              <td>{{ $user->email }}</td>
-                              <td>{{ $user->name }}</td>
-                              <td>{{ $user->realemail }}</td>
-                              <td><?php echo $role ?></td>
-                              <td>
-                                <input type="button" class="btn btn-danger modal_delete" data-id="{{ $user->id }}" data-toggle="modal" data-target="#modal_delete" name="" value="Hapus">
-                              </td>
-                            </tr>
+
+                              <tr >
+                                <td>{{++$key}}</td>
+                                <td><a href="/profile/{{ $user -> id }}">{{ $user ->email }}</a></td>
+                                <td>{{ $user-> name }}</td>
+                                <td>{{ $user-> realemail }}</td>
+                             <td><?php echo $role ?></td>
+                                <td>
+                                  <input dana="{{ hasTransfer( $user-> id) }}" type="button" class="btn btn-danger modal_delete" data-id="{{ $user->id }}" data-toggle="modal" data-target="#modal_delete" name="" value="Hapus">
+                                </td>
+                              </tr>
+
                             @endforeach
                           </tbody>
 
@@ -112,13 +114,19 @@ $(document).ready(function(){
   //onClick Hapus untuk menghapus data transfer
   $("body").on("click",".modal_delete",function() {
       var id = $(this).attr('data-id');
+      var dana = $(this).attr('dana');
       var jumlah = $(this).parent("td").prev("td").prev("td").prev("td").text();
       var role = $(this).parent("td").prev("td").text();
-      console.log('ini role '+ role);
+      console.log('ini hasTransfer '+ dana);
       if(role == 'admin'){
         $(this).attr('data-target', '#modal_warning');
         $('#titleModalWarning').text('Tidak Boleh Menghapus Admin');
         $('#pModal').text('Role admin tidak diperkenankan untuk dihapus');
+      }
+      if(dana != '0'){
+        $(this).attr('data-target', '#modal_warning');
+        $('#titleModalWarning').text('Anggota Masih Memiliki Dana');
+        $('#pModal').text('Anggota yang masih memiliki dana di rekening tidak boleh dihapus');
       }
 
       $("#editP").text("Apakah anda yakin ingin menghapus User "+ jumlah);

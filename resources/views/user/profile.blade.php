@@ -65,7 +65,7 @@
                                         </div>
                                       </div>
                                       <div class="col-md-9">
-                                        <form action="profile/{{ $users -> id }}" method="POST">
+                                        <form action="{{ URL('profile/'. $users -> id )}}" method="POST">
                                           {{ csrf_field() }}
                                           <input type="hidden" name="_method" value="PUT">
                                             <div class="row">
@@ -113,7 +113,7 @@
 </div>
 <script src="{{ asset('js/rupiah.js') }}"></script>
 <script type="text/javascript">
-  $(document).ready(function(){
+
     var idUser = $('#username').attr('data-id');
     var idUserLogin = $('#username').attr('id-login');
     console.log(idUserLogin);
@@ -131,6 +131,5 @@
       $('#change-pic').hide();
     }
 
-  });
 </script>
 @endsection

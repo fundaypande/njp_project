@@ -14,8 +14,9 @@ class UserController extends Controller
 {
     public function show(){
       $users = User::paginate(10);
+      $trans = Transfer::distinct()->groupBy('user_id')->get();
 
-      return view('super_admin.user.kelola_user', compact('users'));
+      return view('super_admin.user.kelola_user', compact('users', 'trans'));
     }
 
     public function showPass(){

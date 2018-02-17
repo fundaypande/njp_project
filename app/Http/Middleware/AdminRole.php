@@ -17,7 +17,7 @@ class AdminRole
     public function handle($request, Closure $next)
     {
       if ((Auth::user() -> role) != '0') {
-        return redirect('/home');
+        return redirect('/home')-> with('msg', 'Maaf anda tidak boleh mengakses halaman admin!');
       }
       return $next($request);
     }

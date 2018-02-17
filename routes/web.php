@@ -1,8 +1,6 @@
 <?php
 
-Route::get('/', function () {
-    return view('index');
-});
+Route::get('/', 'IndexController@front')-> name('index');
 
 Auth::routes();
 
