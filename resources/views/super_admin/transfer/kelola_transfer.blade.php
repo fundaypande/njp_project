@@ -46,7 +46,7 @@
                       </form>
                     </div>
 
-                      <div class="container">
+                      <div class="container" style="overflow-x:auto;">
                         <table class="table table-hover">
                           <thead>
                             <tr>

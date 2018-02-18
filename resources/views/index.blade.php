@@ -11,6 +11,7 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1" />
 		<link rel="stylesheet" href="{!! asset('css/main.css') !!}" />
     <link href="http://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
+		<link rel="shortcut icon" href="/img/icon.ico" />
 	</head>
 	<body>
 
@@ -23,9 +24,36 @@
 		<!-- Nav -->
 			<nav id="menu">
 				<ul class="links">
-					<li><a href="/">Home</a></li>
-					<li><a href="/login">Login</a></li>
-					<li><a href="/register">Register</a></li>
+					<li><a href="/home">Home</a></li>
+
+					<!-- Authentication Links -->
+					@guest
+
+						<li><a href="/login">Login</a></li>
+						<li><a href="/register">Register</a></li>
+					@else
+							<li class="dropdown">
+									<a href="profile/{{Auth::user()->id}}" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false" aria-haspopup="true">
+											{{ Auth::user()->name }} <span class="caret"></span>
+									</a>
+
+									<ul class="dropdown-menu">
+											<li>
+													<a href="{{ route('logout') }}"
+															onclick="event.preventDefault();
+																			 document.getElementById('logout-form').submit();">
+															Logout
+													</a>
+
+													<form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+															{{ csrf_field() }}
+													</form>
+											</li>
+									</ul>
+							</li>
+					@endguest
+
+
 				</ul>
 			</nav>
 

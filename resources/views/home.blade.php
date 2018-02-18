@@ -37,6 +37,9 @@
                           </p>
                       </div>
                           <div class="card-body" style="padding : 10px 20px 10px 20px">
+                            <div style="overflow-x:auto;">
+
+
                             <table class="table table-hover">
                               <thead>
                                 <tr>
@@ -59,11 +62,12 @@
                                 @endforeach
                               </tbody>
                             </table>
+                            </div>
                         </div>
                         <div class="card-footer ">
                                     <hr>
                                     <div style="margin: 0px 10px 10px 10px" class="stats">
-                                        <button type="button" name="button" class="btn btn-primary">Lihat Selengkapnya</button>
+                                        <a href="home/transfer"><button type="button" name="button" class="btn btn-primary">Lihat Selengkapnya</button></a>
                                     </div>
                                 </div>
                     </div>
@@ -79,6 +83,7 @@
                           </p>
                       </div>
                           <div class="card-body" style="padding : 10px 20px 10px 20px">
+                            <div style="overflow-x:auto;">
                             <table class="table table-hover">
                               <thead>
                                 <tr>
@@ -101,11 +106,12 @@
                                 @endforeach
                               </tbody>
                             </table>
+                          </div>
                         </div>
                         <div class="card-footer ">
                                     <hr>
                                     <div style="margin: 0px 10px 10px 10px" class="stats">
-                                        <button type="button" name="button" class="btn btn-primary">Lihat Selengkapnya</button>
+                                        <a href="home/tarik"><button type="button" name="button" class="btn btn-primary">Lihat Selengkapnya</button></a>
                                     </div>
                                 </div>
                     </div>
@@ -158,12 +164,17 @@
                           <div class="card-body" style="padding : 10px 20px 10px 20px">
                             <ol>
                               @foreach($rank as $key => $ranks)
-                                  <a href="profile/{{$ranks -> user_id}}"><li class="rank">{{$ranks -> user -> name}}</li>
+                                  <a href="profile/{{$ranks -> user_id}}"><li class="rank">{{$ranks -> user -> name}}</li></a>
                               @endforeach
                             </ol>
                         </div>
+                        <div class="card-footer ">
+                                    <hr>
+                                    <div style="margin: 0px 10px 10px 10px" class="stats">
+                                        <a href="home/rank"> <button type="button" name="button" class="btn btn-primary">Lihat Selengkapnya</button></a>
+                                    </div>
+                                </div>
                     </div>
-                </div>
                 </div>
 </div>
 </div>
@@ -184,8 +195,8 @@ $.ajax({
       };
 
       var options = {
-          width: 600,
-          height: 400
+          width: undefined,
+          height: undefined
         };
 
       var sum = function(a, b) { return a + b };

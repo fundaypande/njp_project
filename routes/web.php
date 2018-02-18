@@ -5,6 +5,12 @@ Route::get('/', 'IndexController@front')-> name('index');
 Auth::routes();
 
 Route::group(['middleware' => ['auth']], function(){
+  //show laporan transfer - tarik - user
+  Route::get('home/transfer', 'LaporanController@transfer');
+  Route::get('home/tarik', 'LaporanController@tarik');
+  Route::get('home/rank', 'LaporanController@rank');
+
+
   Route::get('/transfer', 'TransferController@show');
   Route::post('transfer/store', 'TransferController@store');
   Route::get('/home', 'HomeController@index')->name('home');

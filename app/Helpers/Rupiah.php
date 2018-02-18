@@ -13,5 +13,3 @@ use App\Http\Controllers\Controller;
       return 1;
     return 0;
   }
-
- ?>

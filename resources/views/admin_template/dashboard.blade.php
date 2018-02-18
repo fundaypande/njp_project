@@ -51,18 +51,8 @@
 									</p>
 															</a>
 															<ul class="dropdown-menu">
-																<li><a href="#">Notification 1</a></li>
-																<li><a href="#">Notification 2</a></li>
-																<li><a href="#">Notification 3</a></li>
-																<li><a href="#">Notification 4</a></li>
-																<li><a href="#">Another notification</a></li>
+																<li><a href="#">Coming Soon</a></li>
 															</ul>
-												</li>
-												<li>
-													 <a href="">
-																<i class="fa fa-search"></i>
-								<p class="hidden-lg hidden-md">Search</p>
-														</a>
 												</li>
 										</ul>
 

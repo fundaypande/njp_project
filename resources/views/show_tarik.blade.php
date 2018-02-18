@@ -52,7 +52,7 @@
                               <th>Nominal</th>
                               <th>Tujuan</th>
                               <th>Keterangan</th>
-                              <th>Action</th>
+                            
                             </tr>
                           </thead>
                           <tbody>
@@ -65,10 +65,7 @@
                               <td class="nominal"><?php echo rupiah(  $tarik->nominal  ); ?></td>
                               <td>{{ $tarik->tujuan }}</td>
                               <td>{{ $tarik->keterangan }}</td>
-                              <td>
-                                <input type="button" class="btn btn-primary modal_edit" data-id="{{ $tarik->id }}" data-toggle="modal" data-target="#modal_edit" name="" value="Edit">
-                                <input type="button" class="btn btn-danger modal_delete" data-id="{{ $tarik->id }}" data-toggle="modal" data-target="#modal_delete" name="" value="Hapus">
-                              </td>
+
                             </tr>
                             @endforeach
                           </tbody>
@@ -92,71 +89,5 @@
 </div>
 </div>
 
-<!-- show modal dialog update status -->
-@include('super_admin.tarik.modal_edit')
-@include('super_admin.tarik.modal_delete')
-
-
-
-
-<script type="text/javascript">
-
-$(document).ready(function(){
-  // onClick status centang untuk yang aproved
-  $("body").on("click",".modal_update",function() {
-      var id = $(this).attr('id');
-      var stat = $(this).attr('value');
-      $("#modal_update").find("form").attr("action","transfer/" + id +"/"+ stat);
-  });
-
-  //on Modal closed
-  $("#modal_update").on("hidden.bs.modal", function () {
-    console.log("yak terclose");
-    $(".checkin").each(function(){
-      $(this).prop("checked", true);
-    });
-
-    $(".checkout").each(function(){
-      $(this).prop("checked", false);
-    });
-  });
-
-  rupiah($('#nominal'));
-
-  $('#modal_edit').appendTo("body");
-  $('#modal_delete').appendTo("body");
-
-  // onClick Edit untuk mengedit data Transfer
-  $("body").on("click",".modal_edit",function() {
-      var id = $(this).attr('data-id');
-      var nominal = $(this).parent("td").prev("td").prev("td").prev("td").text();
-          //nominal = nominal.replace(".", "");
-      var tujuan = $(this).parent("td").prev("td").prev("td").text();
-      var keterangan = $(this).parent("td").prev("td").text();
-
-      $("#modal_edit").find("input[name='nominal']").val(nominal);
-      $("#modal_edit").find("input[name='tujuan']").val(tujuan);
-      $("#modal_edit").find("textarea[name='keterangan']").val(keterangan);
-      $("#modal_edit").find("form").attr("action","tarik/" + id);
-  });
-
-  //onClick Hapus untuk menghapus data transfer
-  $("body").on("click",".modal_delete",function() {
-      var id = $(this).attr('data-id');
-      var jumlah = $(this).parent("td").prev("td").prev("td").prev("td").text();
-
-      $("#editP").text("Apakah anda yakin ingin menghapus data tarik sejumlah Rp."+ jumlah);
-      $("#modal_delete").find("form").attr("action","tarik/" + id);
-  });
-
-
-
-}); //document ready
-
-
-
-</script>
-
-<script src="{{ asset('js/rupiah.js') }}"></script>
 
 @endsection

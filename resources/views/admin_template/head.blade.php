@@ -10,6 +10,7 @@
 
   <!-- Bootstrap core CSS     -->
   <link href="{!! asset('css/bootstrap.min.css') !!}" rel="stylesheet" />
+  <link rel="shortcut icon" href="/img/icon.ico" />
 
   <!-- Animation library for notifications   -->
   <link href="{!! asset('css/animate.min.css') !!}" rel="stylesheet"/>

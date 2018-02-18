@@ -84,7 +84,7 @@ class UserController extends Controller
 
         $input = $request->gambar;
         $input = time().'.'.$request->gambar->getClientOriginalExtension();
-        $request->gambar->move(public_path('gambar'), $input);
+        $request->gambar->move('gambar/', $input);
 
         $oldPic = $user -> gambar;
         if($oldPic != null){
