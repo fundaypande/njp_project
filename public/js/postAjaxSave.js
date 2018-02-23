@@ -36,14 +36,20 @@ $.ajaxSetup({
 });
 
 /* Get Page Data*/
-function getPageData() {
-	$.ajax({
-    	dataType: 'json',
-    	url: url,
-    	data: {page:page}
-	}).done(function(data) {
-		manageRow(data.data);
-	});
+function getPageData(dataku) {
+  var data;
+  if(dataku!=null){
+    manageRow(dataku);
+  } else {
+    $.ajax({
+      	dataType: 'json',
+      	url: url,
+      	data: {page:page}
+  	}).done(function(data) {
+  		manageRow(data.data);
+  	});
+  }
+
 }
 
 
@@ -96,6 +102,23 @@ $("#cari").keyup(function(event){
       manageRow(data.data);
   });
 });
+
+/* Paginate Limit new Post */
+$("#showin").change(function(){
+  var val = $(this).val();
+  console.log(val);
+  $.ajax({
+      dataType: 'json',
+      type:'post',
+      url: url + "/w",
+      data: {val:val}
+  }).done(function(data) {
+      //manageRow(data.data);
+      getPageData(data.data);
+  });
+});
+
+
 
 /* Open Remove */
 $("body").on("click",".remove-item",function() {

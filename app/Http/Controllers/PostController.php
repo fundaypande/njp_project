@@ -17,12 +17,20 @@ class PostController extends Controller
         return view('post.post');
     }
 
+    public function search(Request $request)
+    {
+        $posts = Post::where('title','like','%'.$request->sub.'%')
+                ->orWhere('details','like','%'.$request->sub.'%')
+                ->paginate(10);
+        return response()->json($posts);
+    }
+
     /**
      * Display a listing of the resource.
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index($sub = null, Request $request)
     {
         $posts = Post::latest()->paginate(10);
         return response()->json($posts);

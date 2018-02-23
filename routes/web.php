@@ -53,6 +53,8 @@ Route::group(['middleware' => ['auth']], function(){
 
 
   //tambahan untuk POST ajax jQuery
-  Route::get('post', 'PostController@myPosts');
+  //Route::get('post/{sub?}', 'PostController@search');
+  Route::post('posts/s', 'PostController@search');
+  Route::get('post/{sub?}', 'PostController@myPosts');
   Route::resource('posts','PostController');
 });

@@ -16,10 +16,14 @@
 				<button type="button" class="btn btn-success" data-toggle="modal" data-target="#create-item">Create New Post</button>
 		        </div>
 		    </div>
+				<div class="">
+					<input id="cari" type="text" name="" value="" placeholder="search">
+				</div>
 		</div>
 		<table class="table table-bordered">
 			<thead>
 			    <tr>
+				<th>key</th>
 				<th>Title</th>
 				<th>Details</th>
 				<th width="200px">Action</th>
@@ -35,6 +39,7 @@
 		@include('post.create')
 		<!-- Edit Item Modal -->
 		@include('post.edit')
+		@include('post.delete')
 
 	</div>
 	<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.0/jquery.js"></script>
